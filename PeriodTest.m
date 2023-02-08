@@ -1,10 +1,17 @@
 function [p,F] = PeriodTest(ts,T,dt_order)
-% This function is to test the unknown or known periodicity of a time series using the method given by 
-% Truman L. Kelley (1943) The Evidence for Periodicity in Short Time Series, Journal of the American Statistical Association, 38:223, 319-326, DOI: 10.1080/01621459.1943.10501814
+% This function is to test the unknown or known periodicity of a time series using the method given by Truman L. Kelley
+% (1943) The Evidence for Periodicity in Short Time Series, Journal of the American Statistical Association, 38:223,
+% 319-326, DOI: 10.1080/01621459.1943.10501814
 
-% ts: the time series data
-% T: the periodicity to test, a single value or a series of values. This periodicity test does test for each value separately.
+% Input:
+% ts: the time series data 
+% T: the periodicity to test, a single value or a series of values. This periodicity test does test for each value separately. 
 % dt_order: the order of the polynomial detrending before test. For example, 0, only to minus the mean value; 1, linearly detrending; 2, 2-polynomial detrending
+
+% Output:
+% p: p-value by default F distribution
+% F: F-statistic, between-class variation / within-class variation
+
 
 % STEP 0: polynomial detrend
 ts = detrend(ts,dt_order);

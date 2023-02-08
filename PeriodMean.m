@@ -1,5 +1,8 @@
 function [ml,m] = PeriodMean(ts,T)
-% use periodicity T to calculate the mean curve in a period
+% use periodicity length T to calculate the mean curve in a period
+
+% m, the mean curve in one period
+% ml, the mean curve extended to the length of ts
 
 ts_period = nan(ceil(length(ts)/T),T);
 
